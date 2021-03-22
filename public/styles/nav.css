@@ -1,0 +1,12 @@
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  height: 120px;
+  padding: 1.5em;
+}
+
+nav > span {
+  font-family: 'Bungee', sans-serif;
+}
