@@ -1,12 +1,37 @@
 nav {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #4056A1;
   color: #FFFFFF;
   height: 120px;
   padding: 1.5em;
 }
 
-nav > span {
+nav > div {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#logo {
   font-family: 'Bungee', sans-serif;
+  font-size: 40px;
+}
+
+#navNewTweet {
+  font-weight: 300;
+}
+
+.writeNavPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center:
+}
+
+.writeNavPrompt > h5 {
+  margin: 0;
+}
+
+.writeNavPrompt > span {
+  text-align: center;
 }
