@@ -1,9 +1,19 @@
 .tweetBox {
+  font-weight: lighter;
   display: flex;
   flex-direction: column;
   border: 3px solid black;
   margin-top: 3%;
   padding: 2%
+}
+
+.tweetBox:hover{
+  font-weight: bold;
+  box-shadow: 10px 10px grey;
+}
+
+.tweetBox:hover .handle {
+  display: block;
 }
 
 .tweetBox > header {
@@ -23,10 +33,10 @@
 .handle {
   color: lightblue;
   font-weight: lighter;
+  display: none;
 }
 
 section > article {
-  font-weight: bold;
   display: flex;
   justify-content: space-around;
   padding: 1em;

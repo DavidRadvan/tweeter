@@ -18,6 +18,6 @@ div > h2 {
   color: #FFFFFF;
 }
 
-span {
+h2 > span {
   font-weight: lighter;
 }
