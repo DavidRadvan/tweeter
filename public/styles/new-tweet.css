@@ -2,8 +2,10 @@
   width: 100%;
   resize: none;
   background: none;
-  border: 0 0 10 0;
   border-bottom-width: thick;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
 }
 
 
@@ -28,4 +30,8 @@ div > button {
 label {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
+}
+
+.overLength {
+  color: red;
 }

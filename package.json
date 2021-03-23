@@ -18,5 +18,12 @@
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
+  },
+  "standard": {
+    "globals": [
+      "$"
+      "document"
+    ]
   }
+
 }
