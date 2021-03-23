@@ -4,43 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [{
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}, {
-  "user": {
-    "name": "Descartes",
-    "avatars": "https://i.imgur.com/nlhLi3I.png",
-    "handle": "@rd"
-  },
-  "content": {
-    "text": "Je pense , donc je suis"
-  },
-  "created_at": 1461113959088
-}];
+//escapes a string to prevent XSS attacks.
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
-$('#newTweetSubmission').submit(function() {
-  event.preventDefault();
-  $.ajax('/tweets', {
-      method: 'POST',
-      data: $(this).serialize(),
-      success: function(data) {
-        console.log("Success: ", this.data);
-      }
-    });
-
-    // clears new tweet box after tweet is posted.
-    $(this).children('#tweet-text')[0].value = "";
-});
-
-
+// Creates a new tweet element from a JSON tweet object
 const createTweetElement = function(tweet) {
 
   let timeNow = new Date();
@@ -50,14 +21,26 @@ const createTweetElement = function(tweet) {
   let hoursAgo = Math.floor(difference / (1000 * 60 * 60));
   let minutesAgo = Math.floor(difference / (1000 * 60));
 
-  let dateData = daysAgo + " Days ago";
+  let dateData = daysAgo + " days ago";
+
+  if (daysAgo === 1) {
+    daysAgo + " day ago";
+  }
 
   if (daysAgo < 1) {
-    dateData = hoursAgo + " Hours ago";
+    dateData = hoursAgo + " hours ago";
+  }
+
+  if (hoursAgo === 1) {
+    dateData = hoursAgo + " hour ago";
   }
 
   if (hoursAgo < 1) {
-    dateData = minutesAgo + " Minutes ago";
+    dateData = minutesAgo + " minutes ago";
+  }
+
+  if (minutesAgo === 1) {
+    dateData = minutesAgo + " minute ago";
   }
 
   if (minutesAgo < 1) {
@@ -74,7 +57,7 @@ const createTweetElement = function(tweet) {
       <span class="handle">${tweet.user.handle}</span>
     </header>
     <article>
-      ${tweet.content.text}
+      ${escape(tweet.content.text)}
     </article>
 
     <footer class="dateIcons">
@@ -85,6 +68,9 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
+
+
+// Renders tweets on to the main HTML page
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
     let $tweet = createTweetElement(tweet);
@@ -92,4 +78,56 @@ const renderTweets = function(tweets) {
   }
 };
 
-renderTweets(data);
+$(document).ready(function() {
+  //adds a new tweet to the page.
+  $('#newTweetSubmission').submit(function() {
+
+    event.preventDefault();
+
+    let errorMessage = $("#error")[0];
+
+    let tweetContent = $("#tweet-text")[0].value;
+
+
+    if (!tweetContent) {
+
+      $(errorMessage).slideUp(400, function() {
+        errorMessage.innerText = "❕ Error - Tweet is empty.";
+        $(errorMessage).slideDown(400);
+      });
+
+    } else if (tweetContent.length > 140) {
+
+      $(errorMessage).slideUp(400, function() {
+        errorMessage.innerText = "❕ Error - Tweet is too long. Please reduce to 140 characters or less.";
+        $(errorMessage).slideDown(400);
+      });
+
+    } else {
+
+      $(errorMessage).slideUp(400);
+
+      $.ajax('/tweets', {
+        method: 'POST',
+        data: $(this).serialize(),
+        success: function(data) {
+          loadTweets();
+        }
+      });
+
+      // clears new tweet box after tweet is posted.
+      $(this).children('#tweet-text')[0].value = "";
+    }
+
+  });
+
+  // Fetches tweets from the server
+  const loadTweets = function() {
+    let output = "";
+    $.ajax('/tweets', { method: 'GET' })
+      .then(renderTweets);
+  };
+
+  loadTweets();
+
+});

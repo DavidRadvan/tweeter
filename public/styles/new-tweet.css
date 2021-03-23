@@ -8,6 +8,16 @@
   border-left-style: hidden;
 }
 
+#error {
+  background-color: red;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: none;
+}
+
+.errorOFF {
+  display: none;
+}
 
 form > div {
   display: flex;
