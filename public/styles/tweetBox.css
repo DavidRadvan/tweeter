@@ -1,0 +1,40 @@
+.tweetBox {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  margin-top: 3%;
+  padding: 2%
+}
+
+.tweetBox > header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileTweetHeader {
+  width: 18%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.handle {
+  color: lightblue;
+  font-weight: lighter;
+}
+
+section > article {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+.dateIcons {
+  border-top: 3px solid;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1%;
+}

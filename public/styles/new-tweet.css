@@ -27,6 +27,10 @@ div > button {
   align-items: center;
 }
 
+.newTweetForm {
+  width: 100%;
+}
+
 label {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;

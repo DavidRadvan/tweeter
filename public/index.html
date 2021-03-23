@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweetBox.css" type="text/css" />
 </head>
 
 <body>
@@ -27,7 +28,7 @@
     </div>
   </nav>
 
-  <header>
+  <header id="profileHeader">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -41,7 +42,7 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form class="form-inline" action="/tweets" method="POST">
+      <form class="form-inline newTweetForm" action="/tweets" method="POST">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
@@ -52,7 +53,22 @@
     </section>
 
     <section class="tweetBox">
+      <header>
+        <div class="profileTweetHeader">
+          <img src="https://i.imgur.com/73hZDYK.png" alt="">
+          <span>Name Namer</span>
+        </div>
 
+        <span class="handle">@handle</span>
+      </header>
+    <article>
+      Tweets will go here. They are limited to 140 characters, and must be able to handle that amount of characters - or else it breaks.
+    </article>
+
+    <footer class="dateIcons">
+      <span>10 Days ago</span>
+        <span>icons go here</span>
+    </footer>
     </section>
   </main>
 
