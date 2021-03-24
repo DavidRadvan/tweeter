@@ -62,7 +62,7 @@ const createTweetElement = function(tweet) {
 
     <footer class="dateIcons">
       <span>${dateData}</span>
-      <span>icons go here</span>
+      <span class="icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
     </footer>
   </article>`);
   return $tweet;
@@ -78,6 +78,13 @@ const renderTweets = function(tweets) {
   }
 };
 
+// Fetches tweets from the server
+const loadTweets = function() {
+  let output = "";
+  $.ajax('/tweets', { method: 'GET' })
+    .then(renderTweets);
+};
+
 $(document).ready(function() {
   //adds a new tweet to the page.
   $('#newTweetSubmission').submit(function() {
@@ -87,7 +94,6 @@ $(document).ready(function() {
     let errorMessage = $("#error")[0];
 
     let tweetContent = $("#tweet-text")[0].value;
-
 
     if (!tweetContent) {
 
@@ -121,13 +127,18 @@ $(document).ready(function() {
 
   });
 
-  // Fetches tweets from the server
-  const loadTweets = function() {
-    let output = "";
-    $.ajax('/tweets', { method: 'GET' })
-      .then(renderTweets);
-  };
-
   loadTweets();
 
+  //allows composer button to hide/show new tweet and auto-focus on it.
+  let newTweet = $("#tweetHider")[0];
+
+  $('.composer').click(function() {
+    $(newTweet).slideToggle(400, function() {
+      if ($(newTweet).is(':visible')) {
+        $("#tweet-text").focus();
+      } else {
+        $("#tweet-text").blur();
+      }
+    });
+  })
 });

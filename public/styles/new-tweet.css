@@ -8,6 +8,10 @@
   border-left-style: hidden;
 }
 
+#tweetHider {
+  display: none;
+}
+
 #error {
   background-color: red;
   color: #FFFFFF;
@@ -15,9 +19,6 @@
   display: none;
 }
 
-.errorOFF {
-  display: none;
-}
 
 form > div {
   display: flex;

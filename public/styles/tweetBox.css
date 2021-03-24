@@ -53,3 +53,10 @@ article article {
   justify-content: space-between;
   padding-top: 1%;
 }
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  color: #4056A1;
+  width: 10%;
+}

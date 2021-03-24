@@ -11,10 +11,6 @@ nav {
   padding: 1.5em;
 }
 
-nav > div {
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
 #logo {
   font-family: 'Bungee', sans-serif;
   font-size: 40px;
@@ -36,4 +32,16 @@ nav > div {
 
 .writeNavPrompt > span {
   text-align: center;
+}
+
+.composer {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #4056A1;
+  border: none;
+  color: #FFFFFF;
+  outline: none;
+}
+
+.composer:hover .composeIcon {
+  margin-top: 5%;
 }
