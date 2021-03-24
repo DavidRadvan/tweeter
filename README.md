@@ -4,8 +4,9 @@ Tweeter is a simple one page app that allows users to post tweets to the page wi
 
 ## Final Product
 
-!["screenshot description"](#)
-!["screenshot description"](#)
+!["Desktop mode screenshot"](https://github.com/DavidRadvan/tweeter/blob/master/docs/desktop-view.png?raw=true)
+!["Mobile mode screenshot"](https://github.com/DavidRadvan/tweeter/blob/master/docs/mobile-view.png?raw=true)
+!["Desktop mode (scrolled)"](https://github.com/DavidRadvan/tweeter/blob/master/docs/desktop-view-scrolled.png?raw=true)
 
 ## Dependencies
 
