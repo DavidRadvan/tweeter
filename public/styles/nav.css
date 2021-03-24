@@ -11,6 +11,10 @@ nav {
   padding: 1.5em;
 }
 
+.hidden {
+  display: none;
+}
+
 #logo {
   font-family: 'Bungee', sans-serif;
   font-size: 40px;

@@ -81,7 +81,9 @@ const renderTweets = function(tweets) {
 // Fetches tweets from the server
 const loadTweets = function() {
   let output = "";
-  $.ajax('/tweets', { method: 'GET' })
+  $.ajax('/tweets', {
+      method: 'GET'
+    })
     .then(renderTweets);
 };
 
@@ -117,7 +119,7 @@ $(document).ready(function() {
         method: 'POST',
         data: $(this).serialize(),
         success: function(data) {
-          loadTweets();
+          renderTweets([data]);
         }
       });
 
@@ -140,5 +142,25 @@ $(document).ready(function() {
         $("#tweet-text").blur();
       }
     });
-  })
+  });
+
+  //allows navButton to bring the user to the top of the apge and show new tweet.
+  $('#navButton').click(function() {
+    $(window).scrollTop(0);
+    $(newTweet).slideDown(400, function() {
+      $("#tweet-text").focus();
+    });
+  });
+
+  // If user is at the top, navbar composer is shown - otherwise, navButton is shown.
+  $( window ).scroll(function() {
+    if($(this).scrollTop() <= 0) {
+      $('.composer').removeClass('hidden')
+      $('#navButton').addClass('hidden')
+    } else {
+      $('.composer').addClass('hidden')
+      $('#navButton').removeClass('hidden')
+    }
+  });
+
 });
