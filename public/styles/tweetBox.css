@@ -5,6 +5,7 @@
 
 .tweetBox {
   font-weight: 300;
+  opacity: 50%;
   display: flex;
   flex-direction: column;
   border: 3px solid black;
@@ -13,7 +14,7 @@
 }
 
 .tweetBox:hover{
-  font-weight: bold;
+  opacity: 100%;
   box-shadow: 10px 10px grey;
 }
 
@@ -45,6 +46,7 @@ article article {
   display: flex;
   justify-content: flex-start;
   padding: 1em;
+  font-weight: bold;
 }
 
 .dateIcons {
