@@ -1,3 +1,15 @@
+$brand-color: #4056A1;
+$profile-color: #caccd9;
+$brand-text-color: #FFFFFF;
+$handle-color: lightblue;
+$border-color: black;
+$body-text-color: #545149;
+$body-background-color: #f4f1ec;
+$error-color: red;
+$tweetbox-hover-color: grey;
+$font-sans: 'Source Sans Pro', sans-serif;
+$font-bungee: 'Bungee', sans-serif;
+
 nav {
   position: fixed;
   top: 0;
@@ -5,8 +17,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: $brand-color;
+  color: $brand-text-color;
   height: 120px;
   padding: 1.5em;
   z-index: 1;
@@ -17,7 +29,7 @@ nav {
 }
 
 #logo {
-  font-family: "Bungee", sans-serif;
+  font-family: $font-bungee;
   font-size: 40px;
 }
 
@@ -40,15 +52,13 @@ nav {
 }
 
 .composer {
-  font-family: "Source Sans Pro", sans-serif;
-  background-color: #4056A1;
+  font-family: $font-sans;
+  background-color: $brand-color;
   border: none;
-  color: #FFFFFF;
+  color: $brand-text-color;
   outline: none;
 }
 
 .composer:hover .composeIcon {
   margin-top: 5%;
 }
-
-/*# sourceMappingURL=nav.css.map */

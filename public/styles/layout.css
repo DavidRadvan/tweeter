@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,7 +14,6 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   display: flex;
   align-items: center;
@@ -22,13 +22,12 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
 main {
   width: 90%;
   display: flex;
@@ -37,18 +36,19 @@ main {
   flex-direction: column;
 }
 
- @media only screen and (min-width: 1300px) {
-   body {
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
-     align-items: flex-start;
-   }
+@media only screen and (min-width: 1300px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 
-   main {
-     width: 80%;
-     margin-top: 10rem;
-     margin-right: 3em;
-   }
+  main {
+    width: 80%;
+    margin-top: 10rem;
+    margin-right: 3em;
+  }
+}
 
- }
+/*# sourceMappingURL=layout.css.map */

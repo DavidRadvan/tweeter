@@ -1,0 +1,66 @@
+$brand-color: #4056A1;
+$profile-color: #caccd9;
+$brand-text-color: #FFFFFF;
+$handle-color: lightblue;
+$border-color: black;
+$body-text-color: #545149;
+$body-background-color: #f4f1ec;
+$error-color: red;
+$tweetbox-hover-color: grey;
+$font-sans: 'Source Sans Pro', sans-serif;
+$font-bungee: 'Bungee', sans-serif;
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: $body-text-color;
+  background-color: $body-background-color;
+  font-size: 24px;
+  font-family: $font-sans;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+main {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+ @media only screen and (min-width: 1300px) {
+   body {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: flex-start;
+   }
+
+   main {
+     width: 80%;
+     margin-top: 10rem;
+     margin-right: 3em;
+   }
+
+ }

@@ -1,3 +1,15 @@
+$brand-color: #4056A1;
+$profile-color: #caccd9;
+$brand-text-color: #FFFFFF;
+$handle-color: lightblue;
+$border-color: black;
+$body-text-color: #545149;
+$body-background-color: #f4f1ec;
+$error-color: red;
+$tweetbox-hover-color: grey;
+$font-sans: 'Source Sans Pro', sans-serif;
+$font-bungee: 'Bungee', sans-serif;
+
 #profileHeader {
   margin-top: 120px;
   width: 100%;
@@ -6,7 +18,7 @@
   justify-content: center;
   align-items: center;
   height: 400px;
-  background-color: #caccd9;
+  background-color: $profile-color;
   background-image: url("https://www.transparenttextures.com/patterns/blu-stripes.png");
 }
 
@@ -16,7 +28,7 @@ header > div {
 
 div > h2 {
   margin: 0;
-  color: #FFFFFF;
+  color: $brand-text-color;
 }
 
 h2 > span {
@@ -33,5 +45,3 @@ h2 > span {
     align-items: center;
   }
 }
-
-/*# sourceMappingURL=header.css.map */

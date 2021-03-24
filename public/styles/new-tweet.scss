@@ -1,3 +1,15 @@
+$brand-color: #4056A1;
+$profile-color: #caccd9;
+$brand-text-color: #FFFFFF;
+$handle-color: lightblue;
+$border-color: black;
+$body-text-color: #545149;
+$body-background-color: #f4f1ec;
+$error-color: red;
+$tweetbox-hover-color: grey;
+$font-sans: 'Source Sans Pro', sans-serif;
+$font-bungee: 'Bungee', sans-serif;
+
 #tweet-text {
   width: 100%;
   resize: none;
@@ -13,22 +25,23 @@
 }
 
 #error {
-  background-color: red;
-  color: #FFFFFF;
+  background-color: $error-color;
+  color: $brand-text-color;
   font-weight: bold;
   display: none;
   text-align: center;
 }
 
+
 form > div {
   display: flex;
   justify-content: space-between;
-  font-family: "Bungee", sans-serif;
+  font-family: $font-bungee;
 }
 
 div > button {
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: $brand-color;
+  color: $brand-text-color;
 }
 
 .new-tweet {
@@ -43,12 +56,10 @@ div > button {
 }
 
 label {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $font-sans;
   font-weight: bold;
 }
 
 .overLength {
-  color: red;
+  color: $error-color;
 }
-
-/*# sourceMappingURL=new-tweet.css.map */

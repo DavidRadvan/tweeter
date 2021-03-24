@@ -1,7 +1,19 @@
+$brand-color: #4056A1;
+$profile-color: #caccd9;
+$brand-text-color: #FFFFFF;
+$handle-color: lightblue;
+$border-color: black;
+$body-text-color: #545149;
+$body-background-color: #f4f1ec;
+$error-color: red;
+$tweetbox-hover-color: grey;
+$font-sans: 'Source Sans Pro', sans-serif;
+$font-bungee: 'Bungee', sans-serif;
+
 #navButton {
   height: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: $brand-color;
+  color: $brand-text-color;
   width: 90px;
   height: 90px;
   margin-bottom: 5%;
@@ -22,7 +34,7 @@
 }
 
 #navButton:hover {
-  background-color: #caccd9;
+  background-color: $profile-color;
   margin-bottom: 5%;
 }
 
@@ -32,5 +44,3 @@
     height: 50px;
   }
 }
-
-/*# sourceMappingURL=navButton.css.map */
