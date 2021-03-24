@@ -115,6 +115,8 @@ $(document).ready(function() {
 
       $(errorMessage).slideUp(400);
 
+      $(".counter")[0].innerHTML = 140;
+
       $.ajax('/tweets', {
         method: 'POST',
         data: $(this).serialize(),
