@@ -64,18 +64,9 @@ article article {
   display: flex;
   justify-content: space-around;
   color: #4056A1;
-  width: 10%;
+  width: 20%;
 }
 
-@media only screen and (max-width: 700px) {
-  .icons {
-    margin-right: 1em;
-  }
 
-  svg {
-    padding-right: 10%;
-    padding-left: 10%;
-  }
-}
 
 /*# sourceMappingURL=tweetBox.css.map */
