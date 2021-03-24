@@ -22,3 +22,14 @@ div > h2 {
 h2 > span {
   font-weight: lighter;
 }
+
+@media only screen and (min-width: 1300px) {
+  #profileHeader {
+    margin-top: 10em;
+    margin-right: 6em;
+    margin-left: 6em;
+    width: 40%;
+    display: flex;
+    align-items: center;
+  }
+}

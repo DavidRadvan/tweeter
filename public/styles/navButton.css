@@ -6,6 +6,7 @@
   height: 90px;
   margin-bottom: 5%;
   border-radius: 100%;
+  border-width: 0px;
 }
 
 .navButtonDiv {
@@ -23,4 +24,11 @@
 #navButton:hover {
   background-color: #caccd9;
   margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 700px) {
+  #navButton {
+    width: 50px;
+    height: 50px;
+  }
 }
